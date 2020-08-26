@@ -4,4 +4,4 @@
 	dh $@
 
 override_dh_auto_build:
-	make -C /usr/src/linux-headers-5.7.0-2-amd64 M=$$(pwd)
+	make -C /usr/src/linux-headers-5.7.0-0.bpo.2 M=$$(pwd)
