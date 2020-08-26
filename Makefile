@@ -15,6 +15,5 @@ debs:
 		&& cd ~/kvdo/ \
 		&& echo 'y' | sudo mk-build-deps -i \
 		&& export DEBFULLNAME='Bob the builder' \
-		&& dch --bpo 'Adding backport!' \
 		&& ls \
 		&& dpkg-buildpackage -us -uc"
