@@ -25,4 +25,4 @@ install-test:
 		&& apt-get update \
 		&& ls /tmp/build \
 		&& apt-get install -y -qq /tmp/build/kvdo_6.2.3-0_all.deb \
-		&& dpkg -L vdo"
+		&& dpkg -L kvdo"
