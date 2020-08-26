@@ -1,0 +1,2 @@
+vdo/kvdo.ko /lib/modules/5.7.0-0.bpo.2-amd64
+uds/uds.ko /lib/modules/5.7.0-0.bpo.2-amd64
