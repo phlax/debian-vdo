@@ -1,20 +1,10 @@
 # https://travis-ci.org/#!/phlax/debian-criu
 
-script:
-  - mkdir -p build
-  - chmod -R 777 build
-  - cd build
-  - git clone -b 6.2.3.114-COPR https://github.com/rhawalsh/kvdo/
-  - cp -a ../kvdo/debian kvdo
-  - cd ..
-  - |
-    docker run -ti -v `pwd`/build:/home/bob phlax/debian-build bash -c "\
-      cd ~/kvdo/ \
-      && export DEBFULLNAME=\"Bob the builder\" \
-      && dch --bpo \"Adding backport!\" \
-      && dpkg-buildpackage -us -uc"
+install:
+  - make debs
 
-  - ls build
+script:
+  - ls
 
 before_deploy:
   - echo $DOCKER_API_TOKEN | docker login -u phlax --password-stdin
