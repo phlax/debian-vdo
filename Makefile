@@ -36,3 +36,13 @@ install-test:
 		&& ls /tmp/build \
 		&& apt-get install -y -qq /tmp/build/kvdo_6.2.3-0_all.deb \
 		&& dpkg -L kvdo"
+
+
+publish:
+	git clone https://github.com/phlax/debian
+	cd debian && git remote set-url origin https://oauth2:$$GITHUB_ACCESS_TOKEN@github.com/phlax/debian \
+	cd debian \
+		&& reprepro includedeb buster ../build/*deb \
+		&& git add pool \
+		&& git commit . -m "vdo" \
+		&& git push
