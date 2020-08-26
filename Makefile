@@ -9,6 +9,8 @@ debs:
 	chmod -R 777 build
 	cd build \
 		&& git clone -b 6.2.3.114-COPR https://github.com/rhawalsh/kvdo/ \
+		&& git clone https://github.com/dm-vdo/vdo/ \
+		&& cp -a ../vdo/debian vdo \
 		&& cp -a ../kvdo/debian kvdo
 	docker run -ti -e RUN_UID=$$(id -u) -v $$(pwd)/build:/home/bob phlax/debian-build bash -c "\
 		sudo apt-get update \
@@ -16,7 +18,15 @@ debs:
 		&& cd ~/kvdo/ \
 		&& echo 'y' | sudo mk-build-deps -i \
 		&& export DEBFULLNAME='Bob the builder' \
-		&& ls \
+		&& dpkg-buildpackage -us -uc \
+		&& cd ~/vdo/ \
+		&& sudo apt-get install -y -qq libblkid-dev libdevmapper-dev python3-pip uuid-dev -t buster-backports \
+		&& sudo pip3 install -U pip setuptools \
+		&& sudo pip3 install -U pyyaml \
+		&& cd ~/vdo/ \
+		&& echo 'y' | sudo mk-build-deps -i \
+		&& export DEBFULLNAME='Bob the builder' \
+		&& mkdir build \
 		&& dpkg-buildpackage -us -uc"
 
 install-test:
