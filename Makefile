@@ -23,5 +23,6 @@ install-test:
 	docker run -ti -v $$(pwd)/build:/tmp/build debian:buster-slim bash -c "\
 		echo 'deb-src http://ftp.debian.org/debian testing main contrib non-free' >> /etc/apt/sources.list \
 		&& apt-get update \
-		&& apt-get install -y -qq /tmp/build/vdo_6.2.3-0_all.deb \
+		&& ls /tmp/build \
+		&& apt-get install -y -qq /tmp/build/kvdo_6.2.3-0_all.deb \
 		&& dpkg -L vdo"
