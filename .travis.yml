@@ -4,6 +4,7 @@ install:
   - make debs
 
 script:
+  - ls build
   - make install-test
 
 before_deploy:
