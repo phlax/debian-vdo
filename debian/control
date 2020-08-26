@@ -1,0 +1,8 @@
+Source: vdo-dkms
+Maintainer: Ryan Northey <ryan@synca.io>
+Build-Depends: debhelper (>= 9), dkms
+
+Package: vdo-dkms
+Architecture: all
+Depends: ${misc:Depends}
+Description: VDO deduplication/compression driver
