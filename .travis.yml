@@ -7,13 +7,10 @@ script:
   - ls build
   - make install-test
 
-before_deploy:
-  - echo $DOCKER_API_TOKEN | docker login -u phlax --password-stdin
-
 deploy:
   provider: script
-  script: make hub-image
+  script: make publish
   skip_cleanup: true
   on:
     all_branches: true
-    condition: $TRAVIS_BRANCH =~ ^(masterXXX)$
+    condition: $TRAVIS_BRANCH =~ ^(master)$
