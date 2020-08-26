@@ -1,0 +1,8 @@
+Source: vdo
+Maintainer: Ryan Northey <ryan@synca.io>
+Build-Depends: debhelper (>= 9)
+
+Package: vdo
+Architecture: all
+Depends: ${misc:Depends}
+Description: VDO deduplication/compression userspace cli
