@@ -1,4 +1,4 @@
-vdo-dkms (6.2.3-0) buster; urgency=medium
+vdo (6.2.3-0) buster; urgency=medium
 
   * Initial release.
 
