@@ -2,7 +2,7 @@
 
 install:
   - make debs
-  - apt install -y -qq reprepro
+  - sudo apt install -y -qq reprepro
 
 script:
   - ls build
