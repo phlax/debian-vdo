@@ -1,3 +1,9 @@
+kvdo (6.2.3-1) UNRELEASED; urgency=medium
+
+  * Depmod on postinst
+
+ -- Ryan Northey <ryan@synca.io>  Wed, 26 Aug 2020 22:01:00 +0100
+
 kvdo (6.2.3-0) buster; urgency=medium
 
   * Initial release.
