@@ -1,4 +1,6 @@
 Source: vdo
+Section: admin
+Priority: optional
 Maintainer: Ryan Northey <ryan@synca.io>
 Build-Depends: debhelper (>= 9)
 
